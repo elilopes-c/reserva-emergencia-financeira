@@ -116,7 +116,7 @@ if calcular_button:
     else:
         valor_reserva, meses_totais, anos_calc, meses_restantes_calc, evolucao_dados = \
             calcular_reserva_emergencia(despesas_mensais, tipo_renda_calc, aporte_mensal, taxa_selic_anual_informada)
-    st.header("3. Relatório da Reserva de Emergência")
+    st.header("2. Relatório da Reserva de Emergência")
 
     # -------------------------------------------------------------
     # Parte 3.1. Resumo das Entradas e Resultados Principais
