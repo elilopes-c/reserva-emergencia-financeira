@@ -1,55 +1,57 @@
-# Desafio: Cálculo de Reserva de Emergência Financeira
+# Desafio: Calculadora de Reserva de Emergência Financeira
 
 ## Visão Geral do Projeto
 
-Este projeto tem como objetivo auxiliar no planejamento financeiro pessoal, calculando o valor ideal para a reserva de emergência e estimando o tempo necessário para atingir esse objetivo, considerando um aporte mensal e o rendimento da taxa SELIC.
+Este projeto consiste em uma aplicação interativa desenvolvida com **Streamlit** que visa auxiliar no planejamento financeiro pessoal. A ferramenta calcula o valor ideal para a reserva de emergência e estima o tempo necessário para atingir esse objetivo, considerando o aporte mensal e o rendimento dos juros compostos da taxa SELIC informada pelo usuário.
 
-## Desafio
+## Desafio e Funcionalidades
 
-Crie um programa em Python que solicite ao usuário as seguintes informações e realize os cálculos necessários:
+O programa foi desenvolvido em Python e apresenta as seguintes funcionalidades principais:
 
-1.  **Despesas Mensais:** O valor total das despesas fixas e variáveis que o usuário possui por mês.
-2.  **Tipo de Renda:** Se a renda do usuário é "previsível" (por exemplo, salário fixo) ou "imprevisível" (por exemplo, autônomo com renda variável).
-3.  **Aporte Mensal:** O valor que o usuário pode economizar e investir mensalmente para a reserva de emergência.
+1.  **Coleta de Dados do Usuário via Interface Web:**
+    * **Despesas Mensais:** O valor total das despesas fixas e variáveis que o usuário possui por mês.
+    * **Tipo de Renda:** Seleção se a renda do usuário é "Previsível" (ex: salário fixo) ou "Imprevisível" (ex: autônomo com renda variável).
+    * **Aporte Mensal:** O valor que o usuário pode economizar e investir mensalmente para a reserva de emergência.
+    * **Taxa SELIC Anual:** O usuário informa a taxa SELIC anual atual (em percentual, ex: 10.5 para 10.5%).
+    * **Validação de Entradas:** Todas as entradas numéricas são validadas para garantir que sejam valores positivos, e o tipo de renda é validado para ser uma das opções permitidas.
 
-Com base nessas entradas, o programa deverá:
+2.  **Cálculo do Valor da Reserva de Emergência:**
+    * Se o tipo de renda for "Previsível", a reserva ideal é equivalente a **6 vezes** as despesas mensais.
+    * Se o tipo de renda for "Imprevisível", a reserva ideal é equivalente a **12 vezes** as despesas mensais.
 
-* **Calcular o Valor da Reserva de Emergência:**
-    * Se o tipo de renda for "previsível", a reserva será equivalente a **6 vezes** as despesas mensais.
-    * Se o tipo de renda for "imprevisível", a reserva será equivalente a **12 vezes** as despesas mensais.
-* **Estimar o Tempo para Atingir a Reserva:**
-    * Considerar o aporte mensal informado.
-    * Considerar o rendimento da taxa SELIC (utilize um valor fixo de 12% ao ano para este desafio - *Este valor será atualizado no código com a taxa atual para um cálculo mais realista*).
-    * O cálculo deve considerar o efeito dos juros compostos sobre o saldo da reserva.
+3.  **Simulação e Estimativa do Tempo para Atingir a Reserva:**
+    * O programa simula o crescimento da reserva mês a mês.
+    * Considera o aporte mensal informado pelo usuário.
+    * Aplica o rendimento da **taxa SELIC mensal (calculada a partir da anual informada)** sobre o saldo acumulado, utilizando o conceito de juros compostos.
+    * Calcula o número total de meses e a conversão para anos e meses para atingir o valor da reserva.
 
-## Saída
+## Saída e Relatório Detalhado
 
-O programa deverá apresentar um relatório claro e detalhado, exibindo as seguintes informações:
+Após o usuário clicar no botão "Calcular Reserva de Emergência", o programa apresenta um relatório claro e detalhado na própria interface web, exibindo as seguintes informações:
 
-* **Despesas Mensais Informadas:**
-* **Tipo de Renda:**
-* **Aporte Mensal:**
-* **Valor Total Necessário para a Reserva de Emergência:**
-* **Tempo Estimado para Atingir a Reserva:** (Em meses e/ou anos, da forma mais compreensível possível)
+* **Resumo Geral:**
+    * Despesas Mensais Informadas.
+    * Tipo de Renda (Previsível/Imprevisível).
+    * Aporte Mensal.
+    * Taxa SELIC Anual Utilizada no cálculo.
+    * **Valor Total Necessário para a Reserva de Emergência.**
+    * **Tempo Estimado para Atingir a Reserva** (em anos e meses).
+* **Evolução Mensal Detalhada:**
+    * Uma tabela interativa mostrando o progresso da reserva mês a mês, incluindo:
+        * Número do Mês.
+        * Saldo Inicial do Mês.
+        * Aporte Mensal Realizado.
+        * Juros Recebidos no Mês.
+        * Saldo Final do Mês.
 
-## Exemplo de Interação (Entrada/Saída)
+## Como Acessar e Utilizar
 
-**Entrada:**
+Este programa está hospedado gratuitamente no **Streamlit Community Cloud**, tornando-o acessível a qualquer pessoa com conexão à internet.
 
-```
-Digite suas despesas mensais: 2000
-Sua renda é previsível ou imprevisível? (P/I): P
-Digite seu aporte mensal para a reserva: 300
-```
+* **Acesse a Aplicação:** [Clicando aqui](https://reserva-emergencia-rotainvest.streamlit.app/)
 
-**Saída:**
-
-```
---- Relatório da Reserva de Emergência ---
-Despesas Mensais: R$ 2000.00
-Tipo de Renda: Previsível
-Aporte Mensal: R$ 300.00
-
-Valor Total Necessário para a Reserva de Emergência: R$ 12000.00
-Tempo Estimado para Atingir a Reserva: Aproximadamente 37 meses (3 anos e 1 mês)
-```
+* **Instruções de Uso:**
+   1.  Acesse o link acima.
+   2.  No painel lateral, preencha os campos com suas despesas mensais, escolha seu tipo de renda, informe seu aporte mensal para a reserva e digite a taxa SELIC anual atual.
+   3.  Clique no botão "Calcular Reserva de Emergência".
+   4.  O relatório detalhado e a tabela de evolução aparecerão na tela principal.
