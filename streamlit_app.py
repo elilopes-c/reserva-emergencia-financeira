@@ -43,10 +43,10 @@ aporte_mensal = st.number_input(
 taxa_selic_anual_input = st.number_input(
     "Digite a taxa SELIC anual atual (%):",
     min_value=0.01,
-    value=10.50, # Valor padrão para a SELIC
+    value=14.75, # Valor padrão para a SELIC
     step=0.10,
     format="%.2f",
-    help="Exemplo: digite 10.5 para 10.5%"
+    help="Exemplo: digite 14.75 para 14.75%"
 )
 taxa_selic_anual_informada = taxa_selic_anual_input / 100 # Converter para decimal
 
