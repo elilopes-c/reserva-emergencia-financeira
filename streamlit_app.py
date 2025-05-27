@@ -138,7 +138,7 @@ if calcular_button:
     if meses_restantes_calc > 0:
         if anos_calc > 0:
             tempo_str += " e "
-        tempo_str += f"{meses_restantes_calc} mês{'es' if meses_restantes_calc > 1 else ''}"
+        tempo_str += f"{meses_restantes_calc} mes{'es' if meses_restantes_calc > 1 else ''}"
 
     if tempo_str == "":
         tempo_str = "Menos de um mês (ou já atingida)"
