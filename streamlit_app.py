@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd 
 # Configuração da página
-st.set_page_config(page_title="Calculadora de Reserva de Emergência", page_icon="💰")
-st.title("💰 Calculadora de Reserva de Emergência")
+st.set_page_config(page_title="Calculadora de Reserva de Emergência Rota Invest", page_icon="💰")
+st.title("💰 Calculadora de Reserva de Emergência Rota Invest")
 st.write(
     """
     Use esta ferramenta para calcular o valor ideal da sua reserva de emergência
@@ -165,4 +165,4 @@ if calcular_button:
     st.dataframe(df_evolucao, use_container_width=True)
 
     # Adicionar uma mensagem de sucesso
-    st.success("Cálculo concluído! Planeje-se para alcançar sua reserva!")
+    st.success("Cálculo concluído! Planeje-se para alcançar sua reserva, conte com a Rota Invest!")
